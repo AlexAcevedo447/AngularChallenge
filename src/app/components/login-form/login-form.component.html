@@ -1,0 +1,32 @@
+<div class="card w-50 carta">
+    <div class="card-content">
+        <div class="card-header">
+            <h3>Login</h3>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+            <div class="card-body d-flex flex-column">
+                    
+                    <input class="input" type="email" formControlName="email" placeholder="Correo">
+                    <div *ngIf="loginForm.invalid; else correcto">
+                        <p class="text-danger">{{mensaje}}</p>
+                    </div>
+
+                    <br>
+                    <input class="input" type="password" formControlName="password" placeholder="Contraseña">
+                    <div *ngIf="loginForm.invalid; else correcto"><p class="text-danger">{{mensaje}}</p></div>
+                    <br>
+                <div class="btn-block">
+                    <button class="boton" [disabled]="!loginForm.valid" type="submit">Ingresar</button>
+                </div>
+            </div>
+            <div class="card-footer">
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<ng-template #correcto>
+    <p class="text-success">{{correct}}</p>
+</ng-template>

@@ -1,0 +1,21 @@
+.input{
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.carta{
+    position: absolute;
+    left: 25%;
+    top: 25%;
+}
+
+.boton{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #F85C3E;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}

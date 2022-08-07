@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.dancing-script{
+    font-family: 'Dancing Script', cursive;
+}
+
+.contenedor{
+    min-height: 100vh;
+}
+
+.nombre{
+    font-size: 70px;
+    color: white;
+}
+
+.nombre-dark{
+    font-size: 70px;
+    color: black;
+}
+
+.section{
+    background-color: #F85C3E;
+    color: white;
+}
+
+.transparente-1{
+    background-image: rgba(255, 255, 255, 0.384);
+}

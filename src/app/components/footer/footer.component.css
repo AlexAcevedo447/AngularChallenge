@@ -1,0 +1,13 @@
+.pie{
+    background-color: #F85C3E;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.contenedor-pie{
+    
+    padding: 5px;
+}

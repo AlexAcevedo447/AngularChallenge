@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Meal, RequestAll } from 'src/app/resources/interfaces/generic.interface';
+import { RecipesService } from 'src/app/resources/services/recipes.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public recipes!:Array<Meal>;
 
+  constructor(private mealService:RecipesService) { 
+    
+    this.mealService.getMeal().subscribe((response:RequestAll)=>{
+      this.recipes = response.searchResults[0].results;
+      console.log(this.recipes)
+    });
+  }
+
+  
   ngOnInit(): void {
   }
 

@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
+import { ObjToArrayPipe } from './resources/pipes/ObjToArray.pipe';
 
 
 @NgModule({
@@ -16,13 +19,16 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     LoginComponent,
     LoginFormComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    RecipeCardComponent,
+    ObjToArrayPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

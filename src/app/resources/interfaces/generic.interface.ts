@@ -20,3 +20,17 @@ export interface Meal{
     relevance:number,
     type:string
 }
+
+export interface getRecipes{
+    query:string
+}
+
+export interface menuOptions{
+    Recipes:Array<Meal>,
+    Products:Array<Meal>,
+    MenuItems:Array<Meal>,
+    Articles:Array<Meal>,
+    Videos:Array<Meal>,
+    SimpleFoods:Array<Meal>
+}
+

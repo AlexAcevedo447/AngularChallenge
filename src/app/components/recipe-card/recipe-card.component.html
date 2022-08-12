@@ -1,22 +1,23 @@
 <div class="row transparente-1">
-    <div class="col-4 transparente-1" *ngFor="let receta of recetas| ObjToArray  ; index as i">
+    <div class="col-4 transparente-1" *ngFor="let receta of recetas  ; index as i">
         <div class="card-container transparente-1 h-100 p-3">
             <div class="card text-center h-90" >
-                <img class="card-img-top" src="{{recetas[i].image}}" alt="Card image cap">
+                <img class="card-img-top" src="{{receta.image}}" alt="Card image cap">
                 <div class="card-body">
-                    <h6 class="card-title" [innerText]="recetas[i].name"></h6>
+                    <h6 class="card-title text-dark" [innerText]="receta.name"></h6>
                     <div class="btn-block">
                         <a href="#" class="btn btn-primary mx-2 btn-toggle" data-bs-toggle="modal" data-bs-target="#shortDescription">Short description...</a>
-                        <a href="{{recetas[i].link}}" class="btn btn-primary">Full description...</a>
+                        <a href="{{receta.link}}" class="btn btn-primary">Full description...</a>
                     </div>
                 </div>
+                <!-- modal -->
                 <div class="modal fade" tabindex="-1" role="dialog" id="shortDescription">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">{{recetas[i].name}}</h3>
+                                <h3 class="modal-title">{{receta}}</h3>
                             </div>
-                            <div class="modal-body text-center" [innerHtml]="recetas[i].content">
+                            <div class="modal-body text-center text-dark" [innerHtml]="receta.content">
             
                             </div>
                         </div>

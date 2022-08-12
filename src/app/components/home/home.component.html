@@ -1,8 +1,12 @@
-<div class="container-fluid bg-dark">
-    <strong class="dancing-script nombre">A la carta <i class="fa-solid fa-plate-wheat"></i></strong>
-</div>
-<div class="container-fluid contenido ">
-    <div class="transparente-1 bg-light w-70 p-4">
-        <app-recipe-card [recetas]="recipes"></app-recipe-card>
+<div class="container-fluid bg-dark d-flex flex-row">
+    <strong class="dancing-script nombre mx-5">A la carta <i class="fa-solid fa-plate-wheat"></i></strong>
+    <div class="form-container w-50 d-flex  align-items-center">
+        <form class="form w-100 d-flex flex-row"[formGroup]="searchForm" (ngSubmit)="getFoodByName(searchForm.value)">
+            <input class="form-control" formControlName="query" type="text" placeholder="Recipe search">
+            <button type="submit" class="btn btn-primary cursor-pointer"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
     </div>
+</div>
+<div class="container-fluid contenido w-100 mx-0">
+    <app-meal-section [meals]="meals"></app-meal-section>
 </div>

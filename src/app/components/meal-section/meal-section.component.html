@@ -1,0 +1,9 @@
+
+    <div class="section"*ngFor="let recipe of results; index as i">
+        <div class="transparente-1 w-70 p-4 radius-border" >
+            <div class="section-title">
+                <h2 class="title">{{recipe}}</h2>
+            </div>
+            <app-recipe-card [recetas]="meals[i]"></app-recipe-card>
+        </div>
+    </div>

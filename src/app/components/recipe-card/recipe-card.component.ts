@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Meal } from 'src/app/resources/interfaces/generic.interface';
+import { Meal} from 'src/app/resources/interfaces/generic.interface';
 
 @Component({
   selector: 'app-recipe-card',
@@ -9,15 +8,21 @@ import { Meal } from 'src/app/resources/interfaces/generic.interface';
 })
 export class RecipeCardComponent implements OnInit {
 
-  @Input() recetas!:Array<Meal>;
+  @Input()recetas!:Array<Meal>;
   contenedor!:HTMLElement;
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
   }
 
   limiteDeCaracteres(evento:Event){
     console.log(evento)
+  }
+
+  simplifiedArray(array:Array<Meal>):number{
+    return array.length;
   }
 }

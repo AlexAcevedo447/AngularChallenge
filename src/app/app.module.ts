@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 import { ObjToArrayPipe } from './resources/pipes/ObjToArray.pipe';
+import { MealSectionComponent } from './components/meal-section/meal-section.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ObjToArrayPipe } from './resources/pipes/ObjToArray.pipe';
     HomeComponent,
     FooterComponent,
     RecipeCardComponent,
-    ObjToArrayPipe
+    ObjToArrayPipe,
+    MealSectionComponent
   ],
   imports: [
     BrowserModule,

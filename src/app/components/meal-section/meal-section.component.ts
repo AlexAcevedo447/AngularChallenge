@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MealClass } from 'src/app/resources/classes/meal.class';
-import { Meal } from 'src/app/resources/interfaces/generic.interface';
+import { Meal, getRecipes } from 'src/app/resources/interfaces/generic.interface';
 import { RecipesService } from 'src/app/resources/services/recipes.service';
 
 @Component({
@@ -10,13 +10,14 @@ import { RecipesService } from 'src/app/resources/services/recipes.service';
 })
 export class MealSectionComponent implements OnInit {
   @Input() meals:Array<Meal[]>;
-  results:Array<string>;
-  adapter!:MealClass;
+  @Input()results:Array<string>;
+  adapter:MealClass;
 
   constructor(private mealService:RecipesService) {
     this.adapter = new MealClass(this.mealService);
-    this.results = [];
+    this.results = ['Recipes','Products','Menu Items','Articles','Videos','Simple Foods']
     this.meals = [];
+    
     // this.getMealByName({query:"Lemon"});
 
     this.adapter.getMeal();
@@ -28,4 +29,11 @@ export class MealSectionComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  search(name:getRecipes):void{
+    this.meals = [];
+    this.results = [];
+    this.adapter.getMealByName(name);
+    this.meals = this.adapter.getMeals;
+
+  }
 }

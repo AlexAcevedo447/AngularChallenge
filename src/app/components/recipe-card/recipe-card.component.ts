@@ -12,17 +12,9 @@ export class RecipeCardComponent implements OnInit {
   contenedor!:HTMLElement;
 
   constructor() {
-    
+    this.recetas = [];
   }
 
   ngOnInit(): void {
-  }
-
-  limiteDeCaracteres(evento:Event){
-    console.log(evento)
-  }
-
-  simplifiedArray(array:Array<Meal>):number{
-    return array.length;
   }
 }

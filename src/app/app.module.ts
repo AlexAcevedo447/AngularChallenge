@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 import { ObjToArrayPipe } from './resources/pipes/ObjToArray.pipe';
 import { MealSectionComponent } from './components/meal-section/meal-section.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
+import { FilterPipe } from './resources/pipes/filter.pipe';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { MealSectionComponent } from './components/meal-section/meal-section.com
     FooterComponent,
     RecipeCardComponent,
     ObjToArrayPipe,
-    MealSectionComponent
+    MealSectionComponent,
+    SearchFormComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

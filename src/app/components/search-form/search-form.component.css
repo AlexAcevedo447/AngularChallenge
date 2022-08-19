@@ -1,0 +1,16 @@
+.form-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+.formulario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    max-width: 90%;
+    outline: 1px solid #F85C3E;
+    border: none;
+}

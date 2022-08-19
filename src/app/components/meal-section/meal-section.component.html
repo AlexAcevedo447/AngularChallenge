@@ -1,9 +1,18 @@
 <app-search-form (searchEmmiter)="search($event)"></app-search-form>
-    <div class="section"*ngFor="let recipe of results; index as i">
-        <div class="transparente-1 w-70 p-4 radius-border" >
-            <div class="section-title">
-                <h2 class="title">{{recipe}}</h2>
-            </div>
-            <app-recipe-card [recetas]="meals[i]"></app-recipe-card>
+
+<div class="section mb-5" *ngFor="let recipe of results; index as i">
+    <div class="transparente-1 w-70 p-4 radius-border">
+        <div class="section-title">
+            <h2 class="title">{{recipe}}</h2>
         </div>
+        <app-recipe-card [recetas]="meals[i]" *ngIf="meals[i].length>0;else notFound"></app-recipe-card>
+        <ng-template #notFound>
+            <div class="container transparente-1 my-2 p-2">
+                <h2 class="title text-grey d-flex flex-row notFound">
+                    <i class="fa-solid fa-dog"></i>
+                    <p class="mx-4">Mr. Glutton ate what you were trying to find...</p>
+                </h2>
+            </div>
+        </ng-template>
     </div>
+</div>

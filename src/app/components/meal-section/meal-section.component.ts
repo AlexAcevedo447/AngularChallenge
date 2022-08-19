@@ -30,8 +30,6 @@ export class MealSectionComponent implements OnInit {
   }
   
   search(name:getRecipes):void{
-    this.meals = [];
-    this.results = [];
     this.adapter.getMealByName(name);
     this.meals = this.adapter.getMeals;
 

@@ -28,7 +28,7 @@ import { FilterPipe } from './resources/pipes/filter.pipe';
     ObjToArrayPipe,
     MealSectionComponent,
     SearchFormComponent,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

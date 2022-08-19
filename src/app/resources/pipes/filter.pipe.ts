@@ -6,7 +6,7 @@ import { searchResultsAll } from '../interfaces/generic.interface';
 })
 export class FilterPipe implements PipeTransform {
   transform(lista: searchResultsAll['results'], texto: string): unknown {
-    if (!texto) {
+    if (texto.trim().length == 0) {
       return lista;
     } else {
       return lista.filter((meal) => meal.name.includes(texto));

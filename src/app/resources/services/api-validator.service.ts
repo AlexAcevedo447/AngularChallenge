@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { loginError } from '../alerts/error.alert';
 import { login } from '../interfaces/people.interface';
+import { loginCredential } from '../interfaces/securityObjects.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,12 @@ export class ApiValidatorService {
    }
 
   validateUser(body:login){
-    return this._httpMailer_.post("http://challenge-react.alkemy.org",body).subscribe((response)=>{
-      localStorage.setItem("token", JSON.stringify(response));
+    return this._httpMailer_.post<loginCredential>("http://challenge-react.alkemy.org",body).subscribe((response:loginCredential)=>{
+      localStorage.setItem("token", JSON.stringify(response.token));
       this._navigator_.navigate(["home"])
-    },(error)=>{
-      loginError();
+    },
+    ()=>{
+      loginError()
     })
   }
 }

@@ -12,14 +12,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TokenValidatorGuard implements CanActivate {
-  constructor(private router: Router) {}
+  token:string|null;
+  constructor(private router: Router) {
+    this.token = localStorage.getItem('token');
+  }
 
   private validateToken(token: string | null) {
-    if (typeof token == 'string' && token.trim().length == 0 && token !== null) {
-      this.router.navigate(['']);
-      return false;
-    } else {
+    if (typeof token == 'string' && token.trim().length > 0 && token !== null) {
+      
       return true;
+    } else {
+      this.router.navigate([''])
+      return false;
     }
   }
 
@@ -31,8 +35,8 @@ export class TokenValidatorGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    let token = localStorage.getItem('token');
+    
 
-    return this.validateToken(token);
+    return this.validateToken(this.token);
   }
 }

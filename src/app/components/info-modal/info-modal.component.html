@@ -1,0 +1,17 @@
+<div class="card my-2 carta"id="{{id}}">
+    <div>
+        <div class="content">
+            <div class="card-header">
+                <button class="btn text-dark dismiss" (click)="dismiss(id,$event)">
+                    &times;
+                </button>
+                <h3 class="modal-title text-dark">{{title}}</h3>
+                
+            </div>
+            <div class="body text-center text-dark" [innerHtml]="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+

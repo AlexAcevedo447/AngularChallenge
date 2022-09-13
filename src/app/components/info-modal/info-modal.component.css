@@ -1,0 +1,18 @@
+.carta{
+    position: absolute;
+    z-index: 3;
+    display: none;
+}
+.active{
+    position: absolute;
+    z-index: 3;
+    display: block;
+}
+
+.dismiss{
+    position: absolute;
+    right: 5px;
+}
+
+
+

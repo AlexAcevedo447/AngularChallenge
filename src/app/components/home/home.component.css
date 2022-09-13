@@ -4,3 +4,10 @@
     padding: 20px;
 }
 
+.logout-btn{
+    position:absolute;
+    top: 30px;
+    right: 5px;
+}
+
+

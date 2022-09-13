@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body::-webkit-scrollbar{
+    background: linear-gradient(45deg, #E6D857, #F85C3E, #E6D857, #F85C3E);
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 0.344);
+    border: 1px black solid;
+    border-radius: 5px;
+
+}
+
 .dancing-script{
     font-family: 'Dancing Script', cursive;
 }

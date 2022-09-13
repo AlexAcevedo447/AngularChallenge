@@ -1,32 +1,26 @@
 <div class="row transparente-1">
     <div class="col-4 my-2" *ngFor="let receta of recetas ; index as i">
-        <div class="card-container card transparente-1 h-100 p-3" >
-            <div class="card text-center h-90" >
+        <div class="card-container card transparente-1 h-100 p-3">
+            <div class="card text-center h-90">
                 <div class="img-top contenedor-img">
                     <img class="card-img-top imagen" src="{{receta.image}}" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title text-dark" [innerText]="receta.name"></h6>
+                    <h6 class="card-title text-dark" [innerText]="receta.name|stringTrim"></h6>
+                </div>
+                <div class="card-footer">
                     <div class="btn-block d-flex flex-column">
-                        <a href="#" class="btn btn-primary mx-2 w-40 btn-toggle" data-bs-toggle="modal" data-bs-target="#shortDescription">Short description...</a>
-                        <a href="{{receta.link}}" class="btn btn-primary w-40">Full description...</a>
+                        <button class="btn btn-primary my-2" (click)="toggle(receta.link,$event)">Short description...</button>
+                        <a href="{{receta.link}}" class="btn btn-primary">Full description...</a>
                     </div>
                 </div>
-                <!-- modal -->
-                <div class="modal fade" tabindex="-1" role="dialog" id="shortDescription">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title text-dark">{{receta.name}}</h3>
-                            </div>
-                            <div class="modal-body text-center text-dark" [innerHtml]="receta.content">
-            
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
+            <app-info-modal [id]="receta.link" [title]="receta.name" [content]="receta.content"></app-info-modal>
         </div>
+        
     </div>
 </div>
-
+<div *ngFor="let receta of recetas ; index as i">
+    
+</div>

@@ -23,6 +23,8 @@ export class MealSectionComponent implements OnInit {
     this.adapter.getMeal();
     this.meals = this.adapter.getMeals;
     this.results = this.adapter.getResults;
+
+    
     
   }
 

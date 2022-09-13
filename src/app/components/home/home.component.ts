@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { ApiValidatorService } from 'src/app/resources/services/api-validator.service';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,15 @@ import { filter } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-
-  constructor(private route:Router) {
+  constructor(private route:Router, private validator:ApiValidatorService) {
     
   }
 
   ngOnInit(): void {
   }
 
-  
+  logout(event:Event){
+    this.validator.logUserOut();
+  }
 
 }

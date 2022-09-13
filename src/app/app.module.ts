@@ -15,6 +15,8 @@ import { ObjToArrayPipe } from './resources/pipes/ObjToArray.pipe';
 import { MealSectionComponent } from './components/meal-section/meal-section.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { FilterPipe } from './resources/pipes/filter.pipe';
+import { StringTrim } from './resources/pipes/stringTrim.pipe';
+import { InfoModalComponent } from './components/info-modal/info-modal.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { FilterPipe } from './resources/pipes/filter.pipe';
     MealSectionComponent,
     SearchFormComponent,
     FilterPipe,
+    StringTrim,
+    InfoModalComponent
   ],
   imports: [
     BrowserModule,
